@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+@theme {
+  --color-brand-neon: #BF00FF;
+  --color-brand-pink: #FF007F;
+  --color-brand-dark: #050505;
+  --color-brand-surface: #111111;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white antialiased selection:bg-brand-neon selection:text-white;
+  }
+  
+  option {
+    @apply bg-brand-surface text-white;
+  }
+}
+
+@layer utilities {
+  .glow-neon {
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.5), 0 0 20px rgba(191, 0, 255, 0.3);
+  }
+  .glow-pink {
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.5), 0 0 20px rgba(255, 0, 127, 0.3);
+  }
+  .bg-glow-neon {
+    box-shadow: 0 0 30px rgba(191, 0, 255, 0.2);
+  }
+  .bg-glow-pink {
+    box-shadow: 0 0 30px rgba(255, 0, 127, 0.2);
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
